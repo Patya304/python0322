@@ -19,6 +19,7 @@ Számok átlaga
 """
 lista = [15, 2, 8, 20, 25]
 szovegek = ["Az ", "ágazati ", "vizsga ", "gatya ", "lesz."]
+fib = [0, 1]  # előző két Fibonacci szám
 
 def szamok_szama(lista):
     sz_szama = 0
@@ -46,6 +47,13 @@ def szoveg_osszefuzese(szovegek):
         osszefuzott_szoveg += szoveg
     return osszefuzott_szoveg
 
+def fibonacci():
+    n = int(input("Számot adj: "))
+    for i in range(2, n+1):
+        fib.append(fib[i-1] + fib[i-2])
+    return fibonacci
+fibonacci()
+
 def szamok_atlaga(lista):
     ossz = 0
     szamok = 0
@@ -63,5 +71,5 @@ print(f"Feladatok gyors ellenőrzése \n\nSzámok száma: {szamok_szama(lista)}"
 print(f"Páros számok kiválogatása: {paros_szamok(lista)}")
 print(f"Legnagyobb szám megtalálása: {legnagyobb_szam(lista)}")
 print(f"Szöveg összefűzése: {szoveg_osszefuzese(szovegek)}")
-print(f"Fibonacci sorozat generálása: Érvágás")
+print(f"Fibonacci sorozat generálása: {(fib)}")
 print(f"Számok átlaga: {szamok_atlaga(lista)}")
